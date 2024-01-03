@@ -1,7 +1,8 @@
-
 <?php
 include "header.php";
+
 ?>
+
 <?php
     include("config.php");
     $id = $_GET['editsid'];
@@ -9,20 +10,25 @@ include "header.php";
    if(isset($_POST['submit'])){
     // $id = $_POST["id"];
     $song_name = $_POST["song_name"];
-    $song_file = $_FILES["song_file"];
     
     $genre_id = $_POST["genre_id"];
     $Artist_id = $_POST["Artists_id"];
     
-    $song_image = $_FILES["song_image"];
+    $img=$_FILES["song_image"];
     $imgName = $song_image['name'];
     $tempPath = $song_image['tmp_name'];
-    $myPath3= "images/".$imgName;
+    $myPath3= "images/".$song_image;
     
     move_uploaded_file($tempPath, $myPath3);
-
     
-    $query1 = "UPDATE `song` SET `song_name`='$song_name',`song_image`='$myPath3',`song_file`='$song_file',
+    $audio = $_FILES["song_file"];
+    $imgName1 = $artist_image['name'];
+    $tempPath1 = $artist_image['tmp_name'];
+    $myPath4= "audio/".$song_file;
+    
+    move_uploaded_file($tempPath, $myPath4);
+
+    $query1 = "UPDATE `song` SET `song_name`='$song_name',`song_image`='$myPath3',`song_file`='$myPath4',
     `genre_id`='$genre_id',`Artists_id`='$Artist_id' WHERE `song_id` = '$id'";
 
     $result1 = mysqli_query($conn, $query1);

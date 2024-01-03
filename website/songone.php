@@ -1,3 +1,8 @@
+<?php
+include "config.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,9 +25,9 @@
     <main id="songs-one">
 
 
-        
+<!--         
         <div class="cursor scale"></div>
-        <div class="cursor-two scale"></div>
+        <div class="cursor-two scale"></div> -->
 
 
         <div id="preloader">
@@ -81,25 +86,33 @@
 
     <!-- SONG -->
 <div class="song fade-up">
+<?php
+                $qry= "SELECT * FROM `song`  join genre on genre.id = song.genre_id join artist on artist.Artist_id = song.Artists_id";
+                $res= mysqli_query($conn, $qry);
 
+                while($data = mysqli_fetch_assoc($res)){
+            ?>
+             
     <div class="song-img">
-        <img src="../<?php echo $data["song_image"]; ?>" alt="song">
+        <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">Blinding Lights</div>
-        <div class="artist-name">Arlo Brown Ft. Sza</div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
+
         </div>
+        
         <div class="music-player">
          
             <div class="play-song mouse">
                 <img src="images/play.png" alt="play" data-song="blindinglights">
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="blindinglights">
-                    <source src="music/The-Weeknd-Blinding-Lights-_Lyrics_.ogg" type="audio/ogg">
-                    <source src="music/The Weeknd - Blinding Lights (Lyrics).mp3" type="audio/mp3">
-                    </audio> 
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
+                </audio> 
             </div>
             <div class="download-song mouse">
                 <a href="music/The Weeknd - Blinding Lights (Lyrics).mp3"  download="Blinding Lights - Arlo Brown">4.1K<img src="images/download.png" alt="download"></a>
@@ -107,6 +120,7 @@
         </div>
     </div>
 </div>
+
     <!-- SONG -->
 
 
@@ -115,12 +129,13 @@
         <!-- SONG -->
 <div class="song fade-up">
     <div class="song-img">
-        <img src="images/album-thumbnail-two.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">KillMonger</div>
-        <div class="artist-name">Arlo Brown Ft. Madhw</div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player"> 
             <div class="play-song mouse">
@@ -128,9 +143,8 @@
                 <img src="images/play.png" alt="play" data-song="killmonger">
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="killmonger">
-                    <source src="music/killmonger.ogg" type="audio/ogg">
-                    <source src="music/killmonger.mp3" type="audio/mp3">
-                    </audio> 
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
+               </audio> 
             </div>
             <div class="download-song">
                 <a href="music/killmonger.mp3"  download="KillMonger - Arlo Brown">10.2K<img src="images/download.png" alt="download"></a>
@@ -146,13 +160,14 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-five.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">Alone</div>
-        <div class="artist-name">Arlo Brown </div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -161,8 +176,7 @@
                
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="alone">
-                    <source src="music/old-town-road.ogg" type="audio/ogg">
-                    <source src="music/old-town-road.mp3" type="audio/mp3">
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
 
@@ -186,13 +200,14 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-four.jpg" alt="song"  data-song="blindinglights" class="play">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song" data-song="blindinglights" class="play">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">What's Poppin</div>
-        <div class="artist-name">Arlo Brown Ft. Charlie Puth</div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -201,9 +216,8 @@
                
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="whatspoppin">
-                    <source src="music/The-Weeknd-Blinding-Lights-_Lyrics_.ogg" type="audio/ogg">
-                    <source src="music/The Weeknd - Blinding Lights (Lyrics).mp3" type="audio/mp3">
-                    </audio> 
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
+                 </audio> 
             </div>
 
 
@@ -226,13 +240,14 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-three.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">The BOX</div>
-        <div class="artist-name">Arlo Brown </div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -240,8 +255,7 @@
                 <img src="images/play.png" alt="play" data-song="thebox" >
                
                 <audio data-audio="thebox">
-                    <source src="music/old-town-road.ogg" type="audio/ogg">
-                    <source src="music/old-town-road.mp3" type="audio/mp3">
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
             <div class="download-song">
@@ -265,22 +279,22 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-six.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">Shatter</div>
-        <div class="artist-name">Justin Timberlake Ft. Arlo Brown</div>
-        </div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>   
+    </div>
         <div class="music-player">
          
             <div class="play-song mouse">
                 <img src="images/play.png" alt="play" data-song="shatter" >
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="shatter">
-                    <source src="music/killmonger.ogg" type="audio/ogg">
-                    <source src="music/killmonger.mp3" type="audio/mp3">
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
 
@@ -303,13 +317,14 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-seven.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">Cool Blue</div>
-        <div class="artist-name">Arlo Brown</div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -317,8 +332,7 @@
                 <img src="images/play.png" alt="play" data-song="coolblue" >
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="coolblue">
-                    <source src="music/old-town-road.ogg" type="audio/ogg">
-                    <source src="music/old-town-road.mp3" type="audio/mp3">
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
 
@@ -340,13 +354,14 @@
 
 
     <div class="song-img">
-        <img src="images/album-thumbnail-eight.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
-        <div class="song-name">Dark Fire</div>
-        <div class="artist-name">Arlo Brown Ft. Sza</div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -354,8 +369,7 @@
                 <img src="images/play.png" alt="play" data-song="darkfire" >
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="darkfire">
-                    <source src="music/The-Weeknd-Blinding-Lights-_Lyrics_.ogg" type="audio/ogg">
-                    <source src="music/The Weeknd - Blinding Lights (Lyrics).mp3" type="audio/mp3">
+                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
 
@@ -375,12 +389,13 @@
         <!-- SONG -->
 <div class="song fade-up">
     <div class="song-img">
-        <img src="images/album-thumbnail-nine.jpg" alt="song">
+    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
     </div>
     <div class="song-details">
         <div class="song-details-content">
-            <div class="song-name">The Other Side</div>
-            <div class="artist-name">Arlo Brown </div>
+        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
+        <div class="artist-name"><?php echo $data["artist_name"];?></div>
         </div>
         <div class="music-player">
          
@@ -388,8 +403,7 @@
                 <img src="images/play.png" alt="play" data-song="theotherside" >
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
                 <audio data-audio="theotherside">
-                    <source src="music/killmonger.ogg" type="audio/ogg">
-                    <source src="music/killmonger.mp3" type="audio/mp3">
+                     <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                     </audio> 
             </div>
             <div class="download-song">
@@ -400,11 +414,6 @@
     
 </div>
     <!-- SONG -->
-
-
-
-
-
 
 </div>
 </div>
@@ -450,17 +459,15 @@
 
       
     <!-- NAVIGATION CONTENT -->
-
     <div class="navigation-content">
         <div class="navigation-logo hover opacity">
-            <a href="#" class="text">ARLO BROWN</a>
+            <a href="#" class="text">Sound</a>
          </div>
         <ul class="navigation-ul">
-            <li><a href="index-one.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
-            <li><a href="about-one.html"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
-            <li><a href="songs-one.html" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
-            <li><a href="blog-one.html"  data-text="Blogs" data-img="images/main-bg-three.jpg">Blogs</a></li>
-            <li><a href="contact-one.html"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
+            <li><a href="index.php" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
+            <li><a href="about.php"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
+            <li><a href="songsone.php" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
+            <li><a href="contact.php"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
         </ul>
         <div class="navigation-close hover about-close opacity">
             <div class="navigation-close-line"></div>
@@ -468,6 +475,7 @@
           </div>
     
             <div class="project-preview"></div>
+    
     
             
      <!-- HEADPHONE IMG -->
@@ -506,3 +514,7 @@
     <script src="js/index.js"></script>
 </body>
 </html>
+<?php
+
+}
+?>

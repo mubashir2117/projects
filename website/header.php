@@ -112,7 +112,9 @@ include "config.php";
     <div class="play-song">
         <img src="images/play.png" alt="play" data-song="darkfire" class="hover" >
        
-        <audio src="<?php echo $data["song_file"]; ?>" data-audio="darkfire"></audio> <!--LINK AND NAME OF AUDIO YOU WANT TO PLAY-->
+        <audio data-audio="darkfire">
+        <source src="./audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
+        </audio> <!--LINK AND NAME OF AUDIO YOU WANT TO PLAY-->
     </div>
     <div class="all-songs">
         <a href="songone.php" title="All Songs"><i class="gg-arrow-right"></i></a>
@@ -142,11 +144,10 @@ include "config.php";
             <a href="#" class="text">Sound</a>
          </div>
         <ul class="navigation-ul">
-            <li><a href="index-one.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
-            <li><a href="about-one.html"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
-            <li><a href="songs-one.html" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
-            <li><a href="blog-one.html"  data-text="Blogs" data-img="images/main-bg-three.jpg">Blogs</a></li>
-            <li><a href="contact-one.html"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
+            <li><a href="index.php" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
+            <li><a href="about.php"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
+            <li><a href="songsone.php" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
+            <li><a href="contact.php"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
         </ul>
         <div class="navigation-close hover about-close opacity">
             <div class="navigation-close-line"></div>

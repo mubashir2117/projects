@@ -85,10 +85,15 @@
 <div class="center">
   <div class="about-text">
     <div class="about-text-heading  text-scroll">
-     Hi there, I’m glad you found me. My name is <span class="red"> Arlo Brown</span> and I like to make music.
+     Hi there, I’m glad you found me. <span class="red"> I like to make music.</span>
     </div>
     <div class="about-text-content  text-scroll">
-      On this page you can find out what I have been up to lately and maybe even a little bit about where I will go in the future. For me, the greatest thing about being a musician is being in the position to inspire other people. I take such pleasure in hearing that people have been motivated to create after hearing my music, whether it be a painting, a poem, their own music or something completely different. Music is not a one way street, it is a conversation where the listener's role is as important as the artist's. Well, here you can find my side of it all.
+      On this page you can find out what I have been up to lately and maybe even a little bit about where 
+      I will go in the future. For me, the greatest thing about being a musician is being in the position 
+      to inspire other people. I take such pleasure in hearing that people have been motivated to create 
+      after hearing my music, whether it be a painting, a poem, their own music or something completely different.
+       Music is not a one way street, it is a conversation where the listener's role is as important as the 
+       artist's. Well, here you can find my side of it all.
     </div>
     
    </div>
@@ -116,23 +121,22 @@
     <!-- NAVIGATION CONTENT -->
 
     <div class="navigation-content">
-      <div class="navigation-logo hover opacity">
-        <a href="#" class="text">ARLO BROWN</a>
-       </div>
-      <ul class="navigation-ul">
-          <li><a href="index-one.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
-          <li><a href="about-one.html"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
-          <li><a href="songs-one.html" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
-          <li><a href="blog-one.html"  data-text="Blogs" data-img="images/main-bg-three.jpg">Blogs</a></li>
-          <li><a href="contact-one.html"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
-      </ul>
-      <div class="navigation-close hover about-close opacity">
-          <div class="navigation-close-line"></div>
-          <div class="navigation-close-line"></div>
-        </div>
-  
-          <div class="project-preview"></div>
-  
+        <div class="navigation-logo hover opacity">
+            <a href="#" class="text">Sound</a>
+         </div>
+        <ul class="navigation-ul">
+            <li><a href="index.php" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
+            <li><a href="about.php"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
+            <li><a href="songsone.php" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
+            <li><a href="contact.php"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
+        </ul>
+        <div class="navigation-close hover about-close opacity">
+            <div class="navigation-close-line"></div>
+            <div class="navigation-close-line"></div>
+          </div>
+    
+            <div class="project-preview"></div>
+    
           
    <!-- HEADPHONE IMG -->
    <div class="headphone-navigation opacity">
