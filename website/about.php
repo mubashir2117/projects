@@ -100,7 +100,7 @@
 </div>
 
 <div class="signature">
-   <span class="text-scroll"> Sound</span> 
+   <span class="text-scroll">Sound</span> 
 </div>
 
 
