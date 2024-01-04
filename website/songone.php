@@ -1,4 +1,6 @@
 <?php
+session_start();
+if($_SESSION['role']== 2){
 include "config.php";
 
 ?>
@@ -12,6 +14,8 @@ include "config.php";
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         
        <!--favicon-img--> 
        <link rel="icon" type="image/png" href="images/favicon.jpg">
@@ -79,29 +83,30 @@ include "config.php";
 <!-- SONGS CONTAINER -->
 
 
-<div class="center">
-<div id="songs-container">
+<div class="center container">
+<div id="songs-container" class="row">
 
 
 
     <!-- SONG -->
-<div class="song fade-up">
-<?php
+    <?php
                 $qry= "SELECT * FROM `song`  join genre on genre.id = song.genre_id join artist on artist.Artist_id = song.Artists_id";
                 $res= mysqli_query($conn, $qry);
-
+                
                 while($data = mysqli_fetch_assoc($res)){
-            ?>
+                    ?>
+                    <div class="song fade-up col-lg-4 col-md-6 col-sm-12">
+    
              
     <div class="song-img">
-        <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
+        <img src="../<?php echo $data["song_image"]; ?>" width="200" height="200" alt="song">
     </div>
 
     <div class="song-details">
         <div class="song-details-content">
         <div class="song-name">  <?php echo $data["song_name"];?>  </div>
+        <div class="song-name"><?php echo $data["artist_name"];?></div>
         <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
 
         </div>
         
@@ -110,313 +115,23 @@ include "config.php";
             <div class="play-song mouse">
                 <img src="images/play.png" alt="play" data-song="blindinglights">
                 <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="blindinglights">
+                <audio data-audio="blindinglights" controls autoplay>
                 <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
                 </audio> 
             </div>
             <div class="download-song mouse">
-                <a href="music/The Weeknd - Blinding Lights (Lyrics).mp3"  download="Blinding Lights - Arlo Brown">4.1K<img src="images/download.png" alt="download"></a>
+                <a href="music/Kesariya.mp3"  download="Sound">
+                    <!-- <img src="images/download.png" alt="download"> -->
+                </a>
             </div>
         </div>
     </div>
-</div>
-
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player"> 
-            <div class="play-song mouse">
-                <!-- DATA-SONG AND DATA-AUDIO SHOULD EXACTLY BE SAME -->
-                <img src="images/play.png" alt="play" data-song="killmonger">
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="killmonger">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-               </audio> 
-            </div>
-            <div class="download-song">
-                <a href="music/killmonger.mp3"  download="KillMonger - Arlo Brown">10.2K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
+                </div>
+    <?php } ?>
+</div> 
 </div>
     <!-- SONG -->
 
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="alone" >
-               
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="alone">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-
-
-
-
-            <div class="download-song">
-                <a href="music/old-town-road.mp3"  download="Alone - Arlo Brown">3.3K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song" data-song="blindinglights" class="play">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="whatspoppin" >
-               
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="whatspoppin">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                 </audio> 
-            </div>
-
-
-
-
-            <div class="download-song">
-                <a href="music/The Weeknd - Blinding Lights (Lyrics).mp3"  download="What's Poppin- Arlo Brown">2K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="thebox" >
-               
-                <audio data-audio="thebox">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-            <div class="download-song">
-                <a href="music/old-town-road.mp3"  download="The BOX - Arlo Brown">3.1K<img src="images/download.png" alt="download"></a>
-            </div>
-
-
-
-
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>   
-    </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="shatter" >
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="shatter">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-
-
-
-            <div class="download-song">
-                <a href="music/killmonger.mp3"  download="Shatter - Arlo Brown">2.8K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="coolblue" >
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="coolblue">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-
-
-            <div class="download-song">
-                <a href="music/old-town-road.mp3"  download="Cool Blue - Arlo Brown">963<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-
-
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="darkfire" >
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="darkfire">
-                <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-
-
-            <div class="download-song">
-                <a href="music/The Weeknd - Blinding Lights (Lyrics).mp3"  download="Dark Fire - Arlo Brown">1.8K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-
-
-
-        <!-- SONG -->
-<div class="song fade-up">
-    <div class="song-img">
-    <img src="../<?php echo $data["song_image"]; ?>" width="200" height="100" alt="song">
-    </div>
-    <div class="song-details">
-        <div class="song-details-content">
-        <div class="song-name">  <?php echo $data["song_name"];?>  </div>
-        <div class="artist-name"><?php echo $data["genre_name"];?> </div>
-        <div class="artist-name"><?php echo $data["artist_name"];?></div>
-        </div>
-        <div class="music-player">
-         
-            <div class="play-song mouse">
-                <img src="images/play.png" alt="play" data-song="theotherside" >
-                <!--   DATA-SONG AND DATA-AUDIO VALUE SHOULD MATCH   -->
-                <audio data-audio="theotherside">
-                     <source src="../audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-                    </audio> 
-            </div>
-            <div class="download-song">
-                <a href="music/killmonger.mp3"  download="The Other Side - Arlo Brown">2.2K<img src="images/download.png" alt="download"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    <!-- SONG -->
-
-</div>
-</div>
 
 <!-- SONGS CONTAINER -->
 
@@ -499,13 +214,7 @@ include "config.php";
     
     <!-- NAVIGATION CONTENT -->
       
-
-
-
-
-
-
-    </main>
+   </main>
 
 
     <script src="js/jquery.min.js"></script>
@@ -514,7 +223,13 @@ include "config.php";
     <script src="js/index.js"></script>
 </body>
 </html>
-<?php
-
+<?php }
+else {
+    echo "
+    <script>
+        alert('Login First');
+        window.location.href='login.php';
+    </script>
+    ";
 }
 ?>

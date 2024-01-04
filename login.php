@@ -19,7 +19,12 @@ session_start();
       if(mysqli_num_rows($result) > 0){
         $_SESSION['user_id'] = $data['user_id'];
         $_SESSION['user_name'] = $data['user_name'];
-        echo "<script>location.href = 'index.php';</script>";
+        $_SESSION['role'] = $data['role_id'];
+
+        if($_SESSION['role'] == 1){
+
+          echo "<script>location.href = 'index.php';</script>";
+        }
       }
       else{
           echo "<div class='alert alert-danger w-75 mt-5 mx-auto' role='alert'>
@@ -42,6 +47,9 @@ session_start();
     body {
       font-family: 'Arial', sans-serif;
       background: linear-gradient(to right, rgb(10, 2, 77), rgb(141, 2, 2));
+      background-repeat: no-repeat;
+      background-position: center;
+
       margin: 0;
       padding: 0;
       display: flex;
@@ -119,9 +127,9 @@ session_start();
                 <form action="" class="login-form" id="loginForm"  method="Post">
                     <h1>Login</h1>
                     <label for="username">Username:</label>
-                    <input type="text" class="p-1 border border-dark rounded" id="username" name="user_email" required><br><br>
+                    <input type="text" class="p-1 border border-dark rounded" id="username" name="user_email" autocomplete="off" required><br><br>
                     <label for="password">Password:</label>
-                    <input type="password" class="p-1 border border-dark rounded" id="password" name="user_password" required><br><br>
+                    <input type="password" class="p-1 border border-dark rounded" id="password" name="user_password" autocomplete="off" required><br><br>
 
                     <button class="btn btn-outline-primary btn-lg" name="submit">Login</button>
                 </form>

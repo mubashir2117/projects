@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "config.php";
 ?>
 
@@ -63,9 +64,28 @@ include "config.php";
                 <div class="menu-bar-line"></div>
                 <div class="menu-bar-line"></div>
             </div>
+            <?php 
+                if(!isset($_SESSION['user_name'])){
+            ?>
         <div class="menu-bar-name text mx-4">
-                login
+               <a href="login.php">
+                   login
+               </a> 
+            </div> 
+            <?php } 
+            else {?>
+               <div class="menu-bar-name text mx-4">
+               <a href="">
+                  <?php echo $_SESSION['user_name'] ?>
+               </a> 
+            </div> 
+            <div class="menu-bar-name text mx-4">
+               <a href="logout.php">
+                   logout
+               </a> 
             </div>
+
+            <?php } ?>
         </div>
     </div> 
     
@@ -77,7 +97,7 @@ include "config.php";
     <!-- SOCIAL-MEDIA-LINKS -->
     <div class="social-media-links">
         <ul>
-            <li ><a href="#" data-text="Youtube" class="text hover">YT</a></li>
+            <li ><a href="https://studio.youtube.com/channel/UCCCiwtoLf3wMnRMdxOYTErg/editing/images" data-text="Youtube" class="text hover">YT</a></li>
             <li ><a href="#" data-text="Facebook" class="text hover">FB</a></li>
             <li ><a href="#" data-text="Instagram" class="text hover">IG</a></li>
         </ul>
@@ -93,41 +113,7 @@ include "config.php";
 
 
     <!-- NEW RELEASE -->
-<div class="new-release img text">
-<?php
-                $qry= "SELECT * FROM `song`  join genre on genre.id = song.genre_id join artist on artist.Artist_id = song.Artists_id";
-                $res= mysqli_query($conn, $qry);
 
-                while($data = mysqli_fetch_assoc($res)){
-            ?>
-             
-
-    <img src="../<?php echo $data["song_image"]; ?>" alt="new-release">
-<div class="song-details">
-    <div class="song-name"><?php echo $data["song_name"];?></div>
-    <div class="song-name"><?php echo $data["genre_name"];?></div>
-    <div class="song-name"><?php echo $data["artist_name"];?></div>
-
-    <div class="music-player">
-    <div class="play-song">
-        <img src="images/play.png" alt="play" data-song="darkfire" class="hover" >
-       
-        <audio data-audio="darkfire">
-        <source src="./audio/<?php echo $data["song_file"]; ?>" type="audio/mp3">
-        </audio> <!--LINK AND NAME OF AUDIO YOU WANT TO PLAY-->
-    </div>
-    <div class="all-songs">
-        <a href="songone.php" title="All Songs"><i class="gg-arrow-right"></i></a>
-    </div>
-    </div>
-</div>
-
-    
-</div>
-  
-<?php
-                }
-            ?>
 
     <!-- NEW RELEASE -->
 
@@ -146,7 +132,7 @@ include "config.php";
         <ul class="navigation-ul">
             <li><a href="index.php" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
             <li><a href="about.php"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
-            <li><a href="songsone.php" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
+            <li><a href="songone.php" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
             <li><a href="contact.php"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
         </ul>
         <div class="navigation-close hover about-close opacity">

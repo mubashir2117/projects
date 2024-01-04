@@ -135,7 +135,7 @@ body{
     font-weight: 200;
     font-family: Josefin sans;
     font-weight: bolder;
-    background: url(./images/album-thumbnail-three.jpg); /*HEADER BACKGROUND IMAGE*/
+    background: url(../images/imgheader.jpg); /*HEADER BACKGROUND IMAGE*/
     background-position: center;
     background-size: cover;
 }

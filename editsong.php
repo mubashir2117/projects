@@ -1,8 +1,6 @@
 <?php
 include "header.php";
-
 ?>
-
 <?php
     include("config.php");
     $id = $_GET['editsid'];
@@ -15,16 +13,16 @@ include "header.php";
     $Artist_id = $_POST["Artists_id"];
     
     $img=$_FILES["song_image"];
-    $imgName = $song_image['name'];
-    $tempPath = $song_image['tmp_name'];
-    $myPath3= "images/".$song_image;
+    $imgName = $img['name'];
+    $tempPath = $img['tmp_name'];
+    $myPath3= "images/".$imgName;
     
     move_uploaded_file($tempPath, $myPath3);
     
     $audio = $_FILES["song_file"];
-    $imgName1 = $artist_image['name'];
-    $tempPath1 = $artist_image['tmp_name'];
-    $myPath4= "audio/".$song_file;
+    $audioName = $audio['name'];
+    $tempPath = $audio['tmp_name'];
+    $myPath4= "audio/".$audioName;
     
     move_uploaded_file($tempPath, $myPath4);
 
@@ -49,7 +47,7 @@ include "header.php";
 
         <div class="row">
             <div class="col-lg-12">
-                <form action="" method="Post">
+                <form action="" method="Post" enctype="multipart/form-data">
                     <h1>Edit Song</h1>
                     <?php
                     $query = "SELECT * FROM `song` WHERE song_id = $id";

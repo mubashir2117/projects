@@ -1,3 +1,29 @@
+<?php
+include("config.php");
+?>
+
+<?php
+   if(isset($_POST['submit'])){
+   
+    $c_name = $_POST["c_name"];
+    $c_email = $_POST["c_email"];
+    $c_subject = $_POST["c_subject"];
+
+    
+    $query = "INSERT INTO `contact`(`c_name`,`c_email`,`c_subject`) VALUES 
+    ('$c_name','$c_email','$c_subject')";
+
+    $result = mysqli_query($conn, $query);
+
+    if($result){
+        echo "Record inserted";
+    }
+    else{
+        echo "Error";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,8 +46,8 @@
     <main id="contact-one">
 
          <!-- CUSTOM CURSOR -->
-         <div class="cursor scale"></div>
-         <div class="cursor-two scale"></div>
+         <!-- <div class="cursor scale"></div>
+         <div class="cursor-two scale"></div> -->
          <!-- CUSTOM CURSOR -->
 
         <!-- PRELOADER -->
@@ -76,16 +102,16 @@
 
     <div id="form" class="opacity-contact">
 
-            <form  id ="myForm" action="#">
+            <form  id ="myForm" action="" method="POST">
               <div class="input-line">
-                <input id="name" type="text" placeholder="NAME" class="input-same-line" required>
-                <input id="email" type="email" placeholder="EMAIL" class="input-same-line" required>
+                <input id="name" name="c_name" type="text" placeholder="NAME" class="input-same-line" required>
+                <input id="email" type="email" name="c_email" placeholder="EMAIL" class="input-same-line" required>
               </div>
               <div class="input-line-column">
-                <input id="subject" type="text" placeholder="SUBJECT" required>
+                <input id="subject" name="c_subject" type="text" placeholder="SUBJECT" required>
                 <textarea name="textarea" id="body" class="textarea" placeholder="MESSAGE" required></textarea>
               </div>
-             <button type="button" id="submit" class="hover">Send</button>
+             <button type="button" id="submit" name="submit" class="hover">Send</button>
              <div id="message">INVALID EMAIL</div>
             </form>
           
@@ -104,7 +130,7 @@
         <span id="rotated">  FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; </span>
     </div>
     <div class="mail">
-        <a href="mailto:INFO@GMAIL.COM">INFO@GMAIL.COM</a>
+        <a href="">Sound</a>
     </div>
 </div>
 

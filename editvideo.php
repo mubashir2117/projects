@@ -1,8 +1,8 @@
 
 <?php
-include "header.php";
+    include("header.php");?>
 
-?>
+
 <?php
     include("config.php");
     $id = $_GET['editvideoid'];
@@ -13,8 +13,8 @@ include "header.php";
     $Artist_id = $_POST["Artists_id"];
 
     $video=$_FILES["video_file"];
-    $videoName = $video_file['name'];
-    $tempPath = $video_file['tmp_name'];
+    $videoName = $video['name'];
+    $tempPath = $video['tmp_name'];
     $myPath5= "images/".$videoName;
     
     move_uploaded_file($tempPath, $videoName);
@@ -39,7 +39,7 @@ include "header.php";
 
         <div class="row">
             <div class="col-lg-12">
-                <form action="" method="Post">
+                <form action="" method="Post" enctype="multipart/form-data">
                     <h1>Edit Video</h1>
                     <?php
                     $query = "SELECT * FROM `video` WHERE video_id = $id";
