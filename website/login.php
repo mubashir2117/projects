@@ -59,12 +59,12 @@ session_start();
     }
 
     .login-container {
-      background: transparent;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
       width: 300px;
       text-align: center;
+      background: rgba(77, 57, 57, 0.295);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
       backdrop-filter:  blur(10px) !important;
     }
 

@@ -49,7 +49,9 @@ include "config.php";
    <!-- NAVIGATION -->
    <div class="navigation">
     <div class="logo hover ">
-       <a href="index-two.html" class="text">Song</a>
+    <img src="images/logo.png" style=" background-color: rgba(77, 57, 57, 0.295); background:none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+         backdrop-filter:  blur(10px);  border-radius: 10px;"  width="200" height="140" title="headphone zone" class="texts" alt="headphone">
+      
     </div>
     <div class="menu-bar hover ">
         <div class="menu-bar-name text">
@@ -173,9 +175,7 @@ include "config.php";
       
   <!-- NAVIGATION CONTENT -->
   <div class="navigation-content">
-        <div class="navigation-logo hover opacity">
-            <a href="#" class="text">Sound</a>
-         </div>
+        
         <ul class="navigation-ul">
             <li><a href="index.php" data-text="Home" data-img="images/album-thumbnail-five.jpg">Home</a></li>
             <li><a href="about.php"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
@@ -183,7 +183,7 @@ include "config.php";
             <li><a href="videoone.php"  data-text="Video" data-img="images/img.jpg">Video</a></li>
             <li><a href="contact.php"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
         </ul>
-        <div class="navigation-close hover about-close opacity">
+                <div class="navigation-close hover about-close opacity">
             <div class="navigation-close-line"></div>
             <div class="navigation-close-line"></div>
           </div>
@@ -197,16 +197,6 @@ include "config.php";
       </div>
        <!-- HEADPHONE IMG -->
     
-    
-        <!-- SOCIAL MEDIA LINKS -->
-        <div class="social-media-links-navigation">
-            <ul>
-                <li ><a href="#"  class="text hover opacity">YT</a></li>
-                <li ><a href="#"  class="text hover opacity">FB</a></li>
-                <li ><a href="#"  class="text hover opacity">IG</a></li>
-            </ul>
-        </div>
-          <!-- SOCIAL MEDIA LINKS -->
     
     </div>
     
