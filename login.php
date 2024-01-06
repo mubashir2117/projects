@@ -27,7 +27,7 @@ session_start();
         }
       }
       else{
-          echo "<div class='alert alert-danger w-75 mt-5 mx-auto' role='alert'>
+          echo "<div class='alert alert-danger w-75 mt- mx-auto text-white' role='alert'>
           Username or password is incorrect
         </div>";
       }
@@ -118,6 +118,16 @@ session_start();
     
   </style>
 <body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+  </head>
+  <body>
   
 <div class="content-body">
     <div class="container-fluid">
