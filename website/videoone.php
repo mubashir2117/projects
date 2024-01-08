@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+if($_SESSION['role']== 2){
 include "config.php";
 
 ?>
@@ -49,8 +49,8 @@ include "config.php";
    <!-- NAVIGATION -->
    <div class="navigation">
     <div class="logo hover ">
-    <img src="images/logo.png" style=" background-color: rgba(81, 75, 75, 0.295); background:none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-         backdrop-filter:  blur(10px);  border-radius: 10px;"  width="200" height="140" title="headphone zone" class="texts" alt="headphone">
+    <img src="images/logo.png" style=" background-color: rgba(145, 140, 140, 0.822); box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+         backdrop-filter:  blur(10px);  border-radius: 10px; clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);"  width="200" height="140" title="headphone zone" class="texts" alt="headphone">
       
     </div>
     <div class="menu-bar hover ">
@@ -199,3 +199,13 @@ include "config.php";
     <script src="js/index.js"></script>
 </body>
 </html>
+<?php }
+else {
+    echo "
+    <script>
+        alert('Login First');
+        window.location.href='login.php';
+    </script>
+    ";
+}
+?>

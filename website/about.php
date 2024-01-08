@@ -40,7 +40,7 @@
             <!-- NAVIGATION -->
             <div class="navigation">
                 <div class="logo hover ">
-                <img src="images/logo.png" style=" background-color: rgba(77, 57, 57, 0.295); background:none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+                <img src="images/logo.png" style=" background-color: rgba(145, 140, 140, 0.822);  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
          backdrop-filter:  blur(10px);  border-radius: 10px;"  width="200" height="140" title="headphone zone" class="texts" alt="headphone">
       
           </div>
