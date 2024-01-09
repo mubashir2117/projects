@@ -69,7 +69,7 @@ include "config.php";
             <?php 
                 if(!isset($_SESSION['user_name'])){
             ?>
-        <div class="menu-bar-name text">
+        <div class="menu-bar-name text mx-4">
                <a href="login.php">
                    login
                </a> 
