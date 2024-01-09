@@ -39,7 +39,7 @@ include "config.php";
         <div id="preloader">
             <div class="p">
                 <img src="images/headphone.png" alt="headphone">
-                Use Headphone For Better Experience
+                Use Headphone For Better Music Experience
             </div>
         </div>
         <!-- PRELOADER -->
@@ -99,7 +99,7 @@ include "config.php";
     <!-- SOCIAL-MEDIA-LINKS -->
     <div class="social-media-links">
         <ul>
-            <li ><a href="https://studio.youtube.com/channel/UCCCiwtoLf3wMnRMdxOYTErg/editing/images" data-text="Youtube" class="text hover">YT</a></li>
+            <li><a href="#" data-text="Youtube" class="text hover">YT</a></li>
             <li ><a href="#" data-text="Facebook" class="text hover">FB</a></li>
             <li ><a href="#" data-text="Instagram" class="text hover">IG</a></li>
         </ul>

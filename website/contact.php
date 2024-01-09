@@ -23,17 +23,12 @@ include("config.php");
 <body>
     <main id="contact-one">
 
-         <!-- CUSTOM CURSOR -->
-         <!-- <div class="cursor scale"></div>
-         <div class="cursor-two scale"></div> -->
-         <!-- CUSTOM CURSOR -->
-
-        <!-- PRELOADER -->
+            <!-- PRELOADER -->
         <div id="preloader">
             <div class="p">
                 <img src="images/headphone.png" alt="headphone">
             </div>
-            <div class="p">Use Headphone For Better Experience.</div>
+            <div class="p">Use Headphone For Better Music Experience.</div>
         </div>
         <!-- PRELOADER -->
 
@@ -88,7 +83,7 @@ include("config.php");
               </div>
               <div class="input-line-column">
                 <input id="subject" name="reviews" type="text" placeholder="REVIEWS" required>
-                <textarea name="textarea" id="body" name="message" class="textarea" placeholder="MESSAGE" required></textarea>
+                <input id="subject" name="message" type="text" placeholder="MESSAGE" required>
               </div>
              <button type="submit" id="submit" name="submit" class="hover">Send</button>
             </form>
