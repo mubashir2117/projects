@@ -27,9 +27,9 @@ session_start();
         }
       }
       else{
-          echo "<div class='alert alert-danger w-75 mt- mx-auto text-white' role='alert'>
-          Username or password is incorrect
-        </div>";
+          echo "   <script>
+          document.getElementById('err').innerHTML='Username Or Password is Incorrect';
+          </script>";
       }
     }
     
@@ -134,7 +134,9 @@ session_start();
 
         <div class="row">
 <div class="login-container">
+<div id="err" style="color:red"></div>
                 <form action="" class="login-form" id="loginForm"  method="Post">
+                
                     <h1>Login!</h1>
                     <label for="username">Username:</label>
                     <input type="text" class="p-1 border border-dark rounded" id="username" name="user_email" autocomplete="off" required><br><br>
