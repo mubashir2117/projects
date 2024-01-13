@@ -21,6 +21,18 @@ include "header.php";
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    
 
 <div class="content-body">
     <div class="container-fluid">
@@ -36,6 +48,9 @@ include "header.php";
         </div>
     </div>
 </div>
+</body>
+</html>
+
 <?php
 include "footer.php";
 ?>

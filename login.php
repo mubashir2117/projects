@@ -27,9 +27,18 @@ session_start();
         }
       }
       else{
+<<<<<<< HEAD
           echo "   <script>
           document.getElementById('err').innerHTML='Username Or Password is Incorrect';
           </script>";
+=======
+        echo "
+        <script>
+        document.getElementById('err').innerHTML='Username Or Password is Incorrect';
+        </script>
+    
+        ";
+>>>>>>> 4ada92dcd07657f2f1f6f0739abc96b06c30721e
       }
     }
     
@@ -59,16 +68,17 @@ session_start();
     }
 
     .login-container {
-      background: #fff;
+      background: #000;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       width: 300px;
       text-align: center;
+      backdrop-filter:  blur(50px) !important;
     }
 
-    .login-container h2 {
-      color: #2196F3;
+    .login-container h1 {
+      color: #fff;
     }
 
     .login-form {
@@ -131,19 +141,20 @@ session_start();
   
 <div class="content-body">
     <div class="container-fluid">
-
         <div class="row">
+        <div id="err" style="color:white"></div>
 <div class="login-container">
 <div id="err" style="color:red"></div>
                 <form action="" class="login-form" id="loginForm"  method="Post">
                 
                     <h1>Login!</h1>
                     <label for="username">Username:</label>
-                    <input type="text" class="p-1 border border-dark rounded" id="username" name="user_email" autocomplete="off" required><br><br>
+                    <input type="text" class="p-1 border border-dark rounded" id="username" name="user_email" autocomplete="off" required><br>
                     <label for="password">Password:</label>
                     <input type="password" class="p-1 border border-dark rounded" id="password" name="user_password" autocomplete="off" required><br><br>
 
                     <button class="btn btn-outline-primary btn-lg" name="submit">Login</button>
+                    
                 </form>
             </div>
         </div>

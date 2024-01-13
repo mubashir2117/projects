@@ -39,7 +39,7 @@ include "config.php";
         <div id="preloader">
             <div class="p">
                 <img src="images/headphone.png" alt="headphone">
-                Use Headphone For Better Music Experience
+                Use Headphone For Better Music Experience.
             </div>
         </div>
         <!-- PRELOADER -->
