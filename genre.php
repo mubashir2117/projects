@@ -2,25 +2,7 @@
 <?php
 include "header.php";
 ?>
-<?php
-    include("config.php");
-   if(isset($_POST['submit'])){
-   
-    $genre_name = $_POST["genre_name"];
-    
-    $query = "INSERT INTO `genre`(`genre_name`) VALUES ('$genre_name')";
 
-    $result = mysqli_query($conn, $query);
-
-    if($result){
-        echo "Record inserted";
-        header("Location: genrelist.php");
-    }
-    else{
-        echo "Error";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,9 +10,7 @@ include "header.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    
-</style>
+
 <body>
     
 
@@ -48,9 +28,28 @@ include "header.php";
         </div>
     </div>
 </div>
+<?php
+include "footer.php";
+?>
 </body>
 </html>
 
 <?php
-include "footer.php";
+    include("config.php");
+   if(isset($_POST['submit'])){
+   
+    $genre_name = $_POST["genre_name"];
+    
+    $query = "INSERT INTO `genre`(`genre_name`) VALUES ('$genre_name')";
+
+    $result = mysqli_query($conn, $query);
+
+    if($result){
+        echo "Record inserted";
+       
+    }
+    else{
+        echo "Error";
+    }
+}
 ?>

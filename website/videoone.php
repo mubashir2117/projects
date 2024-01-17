@@ -98,7 +98,7 @@ include "config.php";
 
                     <div class="song fade-up col-lg-3 col-md-6 col-sm-12">  
     <div class="song-img">
-    <video src="<?php echo $data['video_file'] ?>" width="250" height="200" type="video/mp4" controls>
+    <video src="<?php echo $data["video_file"] ?>" width="250" height="200" type="video/mp4" controls>
 </video>
     </div>
 

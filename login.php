@@ -27,19 +27,11 @@ session_start();
         }
       }
       else{
-<<<<<<< HEAD
+
           echo "   <script>
           document.getElementById('err').innerHTML='Username Or Password is Incorrect';
           </script>";
-=======
-        echo "
-        <script>
-        document.getElementById('err').innerHTML='Username Or Password is Incorrect';
-        </script>
-    
-        ";
->>>>>>> 4ada92dcd07657f2f1f6f0739abc96b06c30721e
-      }
+         }
     }
     
 
